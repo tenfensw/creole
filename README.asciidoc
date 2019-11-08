@@ -1,0 +1,25 @@
+= Tcl Creole parser
+
+_Copyright (C) Tim K/RoverAMD 2019 <timprogrammer@rambler.ru>_
+
+== Usage
+
+[source,tcl]
+----
+source creole.tcl
+
+set markup {Hello, I love [[http://tcl.tk|Tcl]] and //**cats**//!}
+set converted [rovcreole::toHtml $markup] ;# rovcreole::toHtml converts Creole markup to HTML
+set parsed [rovcreole::parse $markup] ;# rovcreole::parse converts Creole markup to a list of Tcl dicts
+puts $converted
+----
+
+Output:
+
+[source]
+---
+<p id="line-1">Hello, I love <em><a href='http://tcl.tk'>Tcl</a> and </em><strong>cats</strong><em>!</em></p>
+---
+
+== License
+MIT License
